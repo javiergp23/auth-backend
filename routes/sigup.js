@@ -1,7 +1,20 @@
 const router = require("express").Router();
 
 router.post("/", (req, res) => {
-    
+    const {username, name, password} = req.body;
+    if(!!!username && !!!name && !!!password){
+        return res.status(400).json(
+            jsonResponse(400, {
+                error: "Missing required fields"
+            })
+        )
+    }
+    res.status(200).json(
+        jsonResponse(200, {
+            message: "User signed up successfully"
+        })
+    )
 })
+
 
 module.exports = router;
