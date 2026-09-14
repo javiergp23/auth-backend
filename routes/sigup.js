@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { jsonResponse } = require("../lib/jsonResponse");
 
 router.post("/", (req, res) => {
     const {username, name, password} = req.body;
