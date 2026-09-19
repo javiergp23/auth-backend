@@ -14,8 +14,8 @@ router.post("/", (req, res) => {
     const refreshToken = "refresh_token";
     const user = {
         id: 1,
-        name: "Jhon Doe",
-        username: "jhondoe",
+        name: "name test",
+        username: "username test",
     }
     res.status(200).json(
         jsonResponse(200, {
