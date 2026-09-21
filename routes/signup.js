@@ -12,7 +12,7 @@ router.post("/", (req, res) => {
     }
     res.status(200).json(
         jsonResponse(200, {
-            message: "User signed up successfully"
+            message: "User signed successfully"
         })
     )
 })
