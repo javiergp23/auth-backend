@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
-router.get("/", (req, res) => {
-    res.send("Refresh Token")
+router.get("/", (res) => {
+    res.send("Send Refesh Token")
 })
 
 module.exports = router;
