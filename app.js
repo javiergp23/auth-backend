@@ -1,6 +1,6 @@
-const express = require('express');
-const cors = require('cors');
-const app = express()
+const express = require("express");
+const cors = require("cors");
+const app = express();
 const mongoose = require("mongoose");
 
 require("dotenv").config();
@@ -23,9 +23,9 @@ app.use("/api/user", require("./routes/user"));
 app.use("/api/todos", require("./routes/todos"));
 
 app.get("/", (req, res) => {
-    res.send("Welcome to Node JS API")
-})
+  res.send("Welcome to Node JS API");
+});
 
-app.listen(port, ()=>{
-    console.log(`Server is running on port ${port}`)
-})
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
