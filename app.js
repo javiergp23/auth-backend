@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const mongoose = require("mongoose");
+const User = require("./schema/user");
 
 require("dotenv").config();
 const port = process.env.PORT || 5000;
@@ -12,8 +13,15 @@ const URI = "mongodb://127.0.0.1:27017/Todo";
 
 mongoose
   .connect(URI)
-  .then(() => console.log("MongoDB conectado"))
+  .then(async () => {console.log("MongoDB conectado")
+    const users = await User.find();
+    console.log(users);
+  }
+  
+  )
   .catch((error) => console.error("Error:", error));
+
+
 
 app.use("/api/signup", require("./routes/signup"));
 app.use("/api/login", require("./routes/login"));

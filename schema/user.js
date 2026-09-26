@@ -1,4 +1,4 @@
-const { Mongoose } = require("mongoose");
+const mongoose  = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
   id: { type: Number, required: true, unique: true },
@@ -36,4 +36,4 @@ UserSchema.pre("save", function (next) {
   });
 });
 
-export default mongoose.model("User", UserSchema);
+module.exports = mongoose.model("User", UserSchema);
